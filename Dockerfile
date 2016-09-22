@@ -13,7 +13,7 @@ RUN apt-get update \
        python-bleach \
     && apt-get clean cache
 
-RUN curl http://matrix.org/packages/debian/repo-key.asc | apt-key add - \
+RUN curl -k https://matrix.org/packages/debian/repo-key.asc | apt-key add - \
     && echo "deb http://matrix.org/packages/debian jessie main" > /etc/apt/sources.list.d/matrix.list \
     && apt-get update \
     && apt-get install -y matrix-synapse \
