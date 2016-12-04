@@ -29,6 +29,8 @@ COPY adds/start.sh /start.sh
 RUN chmod a+x /start.sh
 RUN mkdir -p /data
 
+RUN touch /tmp/hola
+
 # startup configuration
 ENTRYPOINT ["/start.sh"]
 CMD ["start"]
